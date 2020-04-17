@@ -10,14 +10,17 @@ body{
 }
 .container{
     height: 100%;
-    padding-bottom: 2.5em; /*  40px/16px */
+    padding-bottom: 4em; /*  64px/16px */
 }
-.small-pic{
+
+/*Hero-image*/
+.hero-image img{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.big-pic{
-    width: 100%;
-}
+
+/*Main Content*/
 h1{
     color:hsl(0, 6%, 24%);
     text-transform: uppercase;
@@ -28,7 +31,7 @@ h1 span{
     font-weight: 600;
 }
 h1 span:first-of-type{
-    font-weight: 100;
+    font-weight: 300;
     color:hsl(0, 36%, 70%);
 }
 .main-text p{
@@ -46,9 +49,6 @@ input{
     padding: 1.25em;
     flex: 5;
 }
-.invalid{
-    border: 2px solid #ff0000;
-}
 button{
     background-image: linear-gradient(135deg, hsl(0, 80%, 86%) 0%, rgb(238, 140, 140) 100%);
     position: relative;
@@ -60,9 +60,14 @@ button{
 button:hover{
     box-shadow: 0px 10px 10px rgba(238, 140, 140, 0.5);
 }
+.invalid{
+    border: 2px solid #ff0000;
+}
 .disabled{
     background-image:linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 80%, 86%) 100%);
 }
+
+/* Footer*/
 .attribution { 
     font-size: 11px; 
     text-align: center; 
@@ -74,9 +79,9 @@ button:hover{
     color: hsl(228, 45%, 44%); 
 }
 
-/* Media Queries */
+/*Media Queries*/
 @media screen and (max-width:600px){
-    .logo{
+    .logo img{
         width: 7.5em; /* 120px/16px */
     }
     h1{
@@ -91,12 +96,9 @@ button:hover{
     form{
         width: 95%;
     }
-    input{
-        margin-left: 24px;
-    }
 }
 @media  screen  and (min-width:601px) and (max-width:800px){
-    .logo{
+    .logo img{
         width: 8em; /* 128px/16px */
     }
     h1{
@@ -107,16 +109,14 @@ button:hover{
     }
     .main-text p{
         width: 85%;
+        margin: auto;
     }
     form{
         width:85%;
     }
-    input{
-        margin:0 auto;
-    }
 }
 @media screen and (min-width:801px) and (max-width:1024px){
-    .logo{
+    .logo img{
         width:8.5em; /* 156px/16px */
     }
     h1{
@@ -138,10 +138,7 @@ button:hover{
         background-color: hsl(0, 100%, 98%);
     }
     .logo{
-        padding: 1.25em; /* 20px/16px */
-    }
-    .big-pic{
-        display: none;
+        padding: .75em; /* 20px/16px */
     }
     .main-text{
         text-align: center;
@@ -150,32 +147,37 @@ button:hover{
         margin: auto;
         justify-content: center;
     }
-    
+    input{
+        margin-left: 1.5em; /* 24px/16px */
+    }
 }
 @media screen and (min-width:1025px){
     .container{
         display: flex;
+        height: 100vh;
         padding-bottom: 0;
+    }
+    .logo{
+        position: absolute;
+        padding: 4% 7.5%;
+    }
+    .hero-image{
+        width:45%;
+        order:2;
     }
     .main-content{
         background-image: url("../images/bg-pattern-desktop.svg");
         background-repeat: no-repeat;
         background-size: cover;
-        width:55%;
+        width:60%;
     }
-    .hero{
-        width:45%;
-    }
-    .small-pic{
-        display: none;
-    }
-    .logo{
-        padding: 5% 0% 0% 15%;
-    }
-    .main-text, form{
-        padding: 7% 15% 0% 15%;
+    .main-text{
+        padding: 20% 15% 0% 15%;
     }
     h1{
         font-size: 4em;
+    }
+    form{
+        padding: 7% 15% 0% 15%;
     }
 }
