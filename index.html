@@ -11,11 +11,21 @@
 </head>
 <body>
   <main class="container">
-     <section class="main-content">
+
+     <div class="logo">
       <img src="./images/logo.svg" alt="Company Logo" class="logo">
+     </div>
 
-      <img class="small-pic" src="./images/hero-mobile.jpg" alt="Profile of a lady">
+     <div class="hero-image">
+       <picture>
+          <source media="(min-width: 1025px)" srcset="./images/hero-desktop.jpg">
+          <source media="(max-width: 1024px)" srcset="./images/hero-mobile.jpg">
+          <img src="./images/hero-desktop.jpg" alt="Profile of a lady">
+       </picture>
+     </div>
 
+     <div class="main-content">
+      
       <div class="main-text">
         <h1>
           <span>We're</span>
@@ -30,16 +40,12 @@
 
       <form id="form">
         <input type="email" name="email" id="email" aria-label="email" placeholder="Email Address" required>
-        <img src="./images/icon-error.svg" class="hide invalid" alt="not valid">
+        <img src="./images/icon-error.svg" class="hide" alt="not valid">
         <button type="submit"><img src="./images/icon-arrow.svg" alt="arrow"></button>
       </form>
 
-      <p class="hide error-message"></p>
-    </section>
+     </div>
 
-    <section class="hero">
-      <img class="big-pic" src="./images/hero-desktop.jpg" alt="Profile of a lady">
-    </section>
   </main>
  
   <footer>
