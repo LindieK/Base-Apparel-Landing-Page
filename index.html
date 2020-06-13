@@ -13,19 +13,19 @@
 <body>
   <main class="container">
 
-     <div class="logo">
-      <img src="./images/logo.svg" alt="Company Logo" class="logo">
-     </div>
+    <div class="logo">
+    <img src="./images/logo.svg" alt="Company Logo" class="logo">
+    </div>
 
-     <div class="hero-image">
-       <picture>
-          <source media="(min-width: 1025px)" srcset="./images/hero-desktop.jpg">
-          <source media="(max-width: 1024px)" srcset="./images/hero-mobile.jpg">
-          <img src="./images/hero-desktop.jpg" alt="Profile of a lady">
-       </picture>
-     </div>
+    <div class="hero-image">
+      <picture>
+        <source media="(min-width: 1025px)" srcset="./images/hero-desktop.jpg">
+        <source media="(max-width: 1024px)" srcset="./images/hero-mobile.jpg">
+        <img src="./images/hero-desktop.jpg" alt="Profile of a lady">
+      </picture>
+    </div>
 
-     <div class="main-content">
+    <div class="main-content">
       
       <div class="main-text">
         <h1>
@@ -41,12 +41,11 @@
 
       <form id="form" novalidate>
         <input type="email" name="email" id="email" aria-label="email" placeholder="Email Address" required>
-        <span id="error-msg" aria-live="polite"></span>
-        <img src="./images/icon-error.svg" class="hide" alt="not valid">
+        <img src="./images/icon-error.svg" id="err-image" class="hide" alt="not valid">
         <button type="submit"><img src="./images/icon-arrow.svg" alt="arrow"></button>
       </form>
-
-     </div>
+      <p id="error-msg" aria-live="polite"></p>
+    </div>
 
   </main>
  
