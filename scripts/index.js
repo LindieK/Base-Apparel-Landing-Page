@@ -1,32 +1,35 @@
-window.onload= function(){
-    const form = document.getElementById('form');
-    const email = document.getElementById('email');
-    const errImg = document.querySelector('form img');
-    const errorMsg = document.querySelector('#error-msg');
+let errorMsg = document.getElementById('error-msg');
+let email = document.querySelector('input');
+const button = document.querySelector('button');
+const errImg = document.querySelector('form img');
+const input_regex = /^([a-z\d_%#!]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
 
-    form.addEventListener('submit', function(event){
-        event.preventDefault();
-        if(email.value == ""){
-            showError(errorMsg, "Please enter an email address.");
-            errImg.className = "show";
-        }
-        else{
-            let regex =/^\S+@\S+\.\S+$/;
-            if(regex.test(email.value) === false){
-                showError(errorMsg, "Please enter a valid email address");
-                errImg.className = "show";
-            }
-            else{
-                showError(errorMsg, "");
-                errImg.className ="hide";
-            }
-        }
-    });
-}
+window.onload= processForm();
 
-function showError(element, message){
-    element.innerHTML = message;
-    element.style.color = 'red';
-    email.className = 'invalid';
-    
-}
+		function processForm(){
+    		
+				email.addEventListener('keyup', e => {
+						validate(e.target, input_regex);
+				});
+
+		}
+
+		function validate(field, regex){
+			resetError(field);
+			regex.test(field.value) ? resetError(field) : showError(field);
+		
+		}
+
+		function resetError(field){
+			field.className = '';
+			errorMsg.className = 'hide';
+			button.disabled = false;
+		}
+
+		function showError(field){
+    		field.className = 'invalid';
+    		errorMsg.innerHTML = "Please enter a valid email address";
+    		errorMsg.className = 'show';
+    		button.disabled = true;
+
+		}

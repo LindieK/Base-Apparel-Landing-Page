@@ -6,7 +6,6 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./styles/index.css">
-  <script src="./scripts/index.js" type="text/javascript"></script>
   
   <title>Frontend Mentor | Base Apparel coming soon page</title>
 </head>
@@ -42,7 +41,7 @@
       <form id="form" novalidate>
         <input type="email" name="email" id="email" aria-label="email" placeholder="Email Address" required>
         <img src="./images/icon-error.svg" id="err-image" class="hide" alt="not valid">
-        <button type="submit"><img src="./images/icon-arrow.svg" alt="arrow"></button>
+        <button type="submit" class="disabled"><img src="./images/icon-arrow.svg" alt="arrow"></button>
       </form>
       <p id="error-msg" aria-live="polite"></p>
     </div>
@@ -56,5 +55,6 @@
     </p>
   </footer>
 
+<script src="./scripts/index.js"></script>
 </body>
 </html>
